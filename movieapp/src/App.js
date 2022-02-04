@@ -1,5 +1,5 @@
 import "./App.css";
-import Movies from "./components/movies/Movies";
+import View from "./components/view/View";
 import styled from "styled-components";
 import bgImage from "./assets/Background.svg";
 import Header from "./components/header/Header";
@@ -37,9 +37,9 @@ function App() {
         <Wrapper>
           <StyledHeader />
           <Routes>
-            <Route path="/" element={<Movies />} />
-            <Route path="/movies" element={<Movies />} />
-            <Route path="/tvshows" element={<Movies />} />
+            <Route path="/" element={<View />} />
+            <Route path="/movies" element={<View />} />
+            <Route path="/tvshows" element={<View />} />
           </Routes>
         </Wrapper>
       </Container>

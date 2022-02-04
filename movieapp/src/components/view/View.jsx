@@ -1,7 +1,7 @@
 import React from "react";
 
-function Movies() {
+function View(props) {
   return <div className=""></div>;
 }
 
-export default Movies;
+export default View;
