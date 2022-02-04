@@ -37,9 +37,9 @@ function App() {
         <Wrapper>
           <StyledHeader />
           <Routes>
-            <Route path="/" element={<View />} />
-            <Route path="/movies" element={<View />} />
-            <Route path="/tvshows" element={<View />} />
+            <Route path="/" element={<View page="Фильмы" />} />
+            <Route path="/movies" element={<View page="Фильмы" />} />
+            <Route path="/tvshows" element={<View page="Сериалы" />} />
           </Routes>
         </Wrapper>
       </Container>
