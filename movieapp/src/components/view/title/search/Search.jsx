@@ -12,7 +12,7 @@ const StyledSearch = styled.input.attrs({ type: "text" })`
   background: transparent;
   background-image: url(${icon});
   background-repeat: no-repeat;
-  background-position: 18px 22px;
+  background-position: 18px 20px;
   outline: none;
   font-family: "Roboto";
   font-style: normal;
