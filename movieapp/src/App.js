@@ -3,6 +3,7 @@ import View from "./components/view/View";
 import styled from "styled-components";
 import bgImage from "./assets/Background.svg";
 import Header from "./components/header/Header";
+import "./index.css";
 import {
   BrowserRouter as Router,
   Route,
@@ -13,7 +14,7 @@ import {
 const Wrapper = styled.div`
   margin: auto;
   width: 1200px;
-  height: 900px;
+  overflow: auto;
 `;
 const Container = styled.div`
   width: 100%;

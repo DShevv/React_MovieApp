@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 const StyledView = styled.section`
   margin-top: 64px;
+  margin-bottom: 156px;
 `;
 
 function View(props) {
