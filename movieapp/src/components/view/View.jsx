@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { shows } from "../../assets/ShowList";
 import Title from "./title/Title";
 import Content from "./content/Content";
 import styled from "styled-components";
