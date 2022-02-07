@@ -20,7 +20,7 @@ function Content(props) {
   return (
     <StyledContent>
       <SectionTitle>Популярное</SectionTitle>
-      <CardGrid data={props.data} />
+      <CardGrid data={props.data} name={props.name}/>
     </StyledContent>
   );
 }
