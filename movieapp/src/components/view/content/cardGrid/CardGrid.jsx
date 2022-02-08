@@ -5,8 +5,8 @@ import Card from "./card/Card";
 const StyledGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  row-gap: 24px;
-  column-gap: 20px;
+  row-gap: 20px;
+  column-gap: 24px;
 `;
 
 function CardGrid(props) {
