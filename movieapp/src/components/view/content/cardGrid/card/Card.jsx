@@ -55,16 +55,19 @@ const BackGroud = styled.img`
 `;
 
 function Card(props) {
+
+  const img = `https://image.tmdb.org/t/p/w500${props.data.poster_path}`;
+
   return (
     <CardContainer>
-      <BackGroud src={props.data.image} />
+      <BackGroud src={img} />
       <StyledCard>
-        <CardRaiting value={props.data.rating}></CardRaiting>
+        <CardRaiting value={props.data.vote_average}></CardRaiting>
         <Poster
-          src={props.data.image}
-          alt={`Постер фильма ` + props.data.title}
+          src={img}
+          alt={`Постер фильма ` + props.data[props.name]}
         />
-        <Title>{props.data.title}</Title>
+        <Title>{props.data[props.name]}</Title>
       </StyledCard>
     </CardContainer>
   );

@@ -5,7 +5,6 @@ import bgImage from "./assets/Background.svg";
 import Header from "./components/header/Header";
 import "./index.css";
 import {
-  BrowserRouter as Router,
   Route,
   BrowserRouter,
   Routes,
@@ -38,9 +37,9 @@ function App() {
         <Wrapper>
           <StyledHeader />
           <Routes>
-            <Route path="/" element={<View page="Фильмы" />} />
-            <Route path="/movies" element={<View page="Фильмы" />} />
-            <Route path="/tvshows" element={<View page="Сериалы" />} />
+            <Route path="/" element={<View page="Фильмы" code="movie"/>} />
+            <Route path="/movies" element={<View page="Фильмы" code="movie"/>} />
+            <Route path="/tvshows" element={<View page="Сериалы" code="tv"/>} />
           </Routes>
         </Wrapper>
       </Container>
