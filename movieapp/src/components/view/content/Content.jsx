@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import CardGrid from "./cardGrid/CardGrid";
+import Pagination from "./pagination/Pagination";
 
 const StyledContent = styled.div`
   margin-top: 48px;
@@ -20,7 +21,8 @@ function Content(props) {
   return (
     <StyledContent>
       <SectionTitle>Популярное</SectionTitle>
-      <CardGrid data={props.data} name={props.name}/>
+      <CardGrid data={props.data.results} name={props.name}/>
+      <Pagination pageData={ { page:props.data.page, total:props.data.total_pages } } inc={props.inc} dec={props.dec}/>
     </StyledContent>
   );
 }
