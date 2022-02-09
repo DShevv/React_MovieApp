@@ -31,19 +31,20 @@ const StyledNavLink = styled(NavLink)`
 
 const Poster = styled.img`
   width: 266px;
-  height: 400px;
+  min-height: 400px;
   border-radius: 8px;
 `;
 
 const Title = styled.div`
-  height: 40px;
-  margin: 16px 0px;
-  padding: 8px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 8px 8px 0px 8px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 20px;
   letter-spacing: 0.01em;
   color: #ebeef5;
   
