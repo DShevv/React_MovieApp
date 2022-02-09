@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import FilmInfo from "./filmInfo/FilmInfo";
+import TvInfo from "./tvInfo/TvInfo";
 
 
 const StyledInfo = styled.section`
@@ -14,7 +15,7 @@ function DetailsInfo(props) {
   
   return (
     <StyledInfo>
-      { props.code === "movie" ? <FilmInfo data={props.data}></FilmInfo> : <div></div>}
+      { props.code === "movie" ? <FilmInfo data={props.data}></FilmInfo> : <TvInfo data={props.data}></TvInfo>}
     </StyledInfo>
   );
 }

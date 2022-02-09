@@ -34,7 +34,6 @@ function Details(props) {
     .then(res => res.json() )
     .then(result => {
       setData(result);
-      console.log(result);
     })
   }, [props, params.movieId]);
 
@@ -48,7 +47,7 @@ function Details(props) {
       </Loader> 
       :
       <div>
-        <DetailsTitle page={props.page} back={data.backdrop_path} title={data.title}/>
+        <DetailsTitle page={props.page} back={data.backdrop_path} title={ props.code === "movie" ? data.title : data.name}/>
         <DetailsContent code={props.code} data={data}/>
       </div>
       }
