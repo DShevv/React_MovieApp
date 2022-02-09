@@ -61,7 +61,7 @@ function View(props) {
         <Loader>
           <StyledImg src={load} alt="Загрузка"/>
         </Loader> 
-        : <Content data={data} name={props.code === "tv" ? "name" : "title"} inc={incPage} dec={decPage} />}
+        : <Content data={data} code={props.code} name={props.code === "tv" ? "name" : "title"} inc={incPage} dec={decPage} />}
     </StyledView>
   );
 }

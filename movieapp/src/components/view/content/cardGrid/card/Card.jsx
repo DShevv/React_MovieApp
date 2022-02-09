@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import CardRaiting from "./cardRaiting/CardRaiting";
 
@@ -15,12 +16,17 @@ const StyledCard = styled.div`
   transition: ease-in-out 0.3s;
   transform: translateZ(0);
   z-index: 2;
+  
 
   &:hover {
     cursor: pointer;
     transform: translateY(-5px);
     background: rgba(46, 58, 90, 0.8);
   }
+`;
+
+const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
 `;
 
 const Poster = styled.img`
@@ -40,6 +46,7 @@ const Title = styled.div`
   line-height: 24px;
   letter-spacing: 0.01em;
   color: #ebeef5;
+  
 `;
 
 const CardContainer = styled.div`
@@ -57,19 +64,21 @@ const BackGroud = styled.img`
 function Card(props) {
 
   const img = `https://image.tmdb.org/t/p/w500${props.data.poster_path}`;
-
   return (
-    <CardContainer>
-      <BackGroud src={img} />
-      <StyledCard>
-        <CardRaiting value={props.data.vote_average}></CardRaiting>
-        <Poster
-          src={img}
-          alt={`Постер фильма ` + props.data[props.name]}
-        />
-        <Title>{props.data[props.name]}</Title>
-      </StyledCard>
-    </CardContainer>
+    <StyledNavLink to={`/${props.code}/${props.data.id}`}>
+      <CardContainer>
+        <BackGroud src={img} />
+        <StyledCard>
+          <CardRaiting value={props.data.vote_average}></CardRaiting>
+          <Poster
+            src={img}
+            alt={`Постер фильма ` + props.data[props.name]}
+          />
+          <Title>{props.data[props.name]}</Title>
+        </StyledCard>
+      </CardContainer>
+    </StyledNavLink>
+    
   );
 }
 

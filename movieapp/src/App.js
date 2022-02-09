@@ -9,6 +9,7 @@ import {
   BrowserRouter,
   Routes,
 } from "react-router-dom";
+import Details from "./components/detailsPage/Details";
 
 const Wrapper = styled.div`
   margin: auto;
@@ -37,9 +38,11 @@ function App() {
         <Wrapper>
           <StyledHeader />
           <Routes>
-            <Route path="/" element={<View page="Фильмы" code="movie"/>} />
-            <Route path="/movies" element={<View page="Фильмы" code="movie"/>} />
-            <Route path="/tvshows" element={<View page="Сериалы" code="tv"/>} />
+            <Route index element={<View page="Фильмы" code="movie"/>} />
+            <Route path="movie" element={<View page="Фильмы" code="movie"/>} />
+            <Route path="movie/:movieId" element={<Details page="Фильмы" code="movie"/>} />
+            <Route path="tv" element={<View page="Сериалы" code="tv"/>} />
+            <Route path="tv/:movieId" element={<Details page="Сериалы" code="tv"/>} />
           </Routes>
         </Wrapper>
       </Container>
