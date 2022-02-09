@@ -40,9 +40,9 @@ function App() {
           <Routes>
             <Route index element={<View page="Фильмы" code="movie"/>} />
             <Route path="movie" element={<View page="Фильмы" code="movie"/>} />
-            <Route path="movie/:movieId" element={<Details />} />
+            <Route path="movie/:movieId" element={<Details page="Фильмы" code="movie"/>} />
             <Route path="tv" element={<View page="Сериалы" code="tv"/>} />
-            <Route path=":movieId" element={<Details />} />
+            <Route path=":movieId" element={<Details page="Сериалы" code="tv"/>} />
           </Routes>
         </Wrapper>
       </Container>

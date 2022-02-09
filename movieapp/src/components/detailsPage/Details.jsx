@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import DetailsTitle from "./detailsTitle/DetailsTitle";
+import DetailsContent from "./detailsContent/DetailsContent";
 import load from "../../assets/loading.svg";
 
 const StyledDetails = styled.section`
-  margin-top: 64px;
+  margin-top: 40px;
   margin-bottom: 156px;
 `;
 
@@ -25,13 +27,14 @@ const StyledImg = styled.img`
 function Details(props) {
   const params = useParams();
   
-
+//<Loader>
+//          <StyledImg src={load} alt="Загрузка"/>
+//        </Loader> 
 
   return (
     <StyledDetails>
-        <Loader>
-          <StyledImg src={load} alt="Загрузка"/>
-        </Loader> 
+        <DetailsTitle />
+        <DetailsContent />
     </StyledDetails>
   );
 }
