@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import CardRaiting from "./cardRaiting/CardRaiting";
 
@@ -57,19 +58,21 @@ const BackGroud = styled.img`
 function Card(props) {
 
   const img = `https://image.tmdb.org/t/p/w500${props.data.poster_path}`;
-
   return (
-    <CardContainer>
-      <BackGroud src={img} />
-      <StyledCard>
-        <CardRaiting value={props.data.vote_average}></CardRaiting>
-        <Poster
-          src={img}
-          alt={`Постер фильма ` + props.data[props.name]}
-        />
-        <Title>{props.data[props.name]}</Title>
-      </StyledCard>
-    </CardContainer>
+    <NavLink to={`/${props.code}/${props.data.id}`}>
+      <CardContainer>
+        <BackGroud src={img} />
+        <StyledCard>
+          <CardRaiting value={props.data.vote_average}></CardRaiting>
+          <Poster
+            src={img}
+            alt={`Постер фильма ` + props.data[props.name]}
+          />
+          <Title>{props.data[props.name]}</Title>
+        </StyledCard>
+      </CardContainer>
+    </NavLink>
+    
   );
 }
 

@@ -13,7 +13,7 @@ function CardGrid(props) {
   return (
     <StyledGrid>
       {props.data.map((item) => (
-        <Card key={item.id} data={item} name={props.name}></Card>
+        <Card key={item.id} data={item} name={props.name} code={props.code}></Card>
       ))}
     </StyledGrid>
   );
