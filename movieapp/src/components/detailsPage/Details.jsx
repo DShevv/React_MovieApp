@@ -26,15 +26,32 @@ const StyledImg = styled.img`
 
 function Details(props) {
   const params = useParams();
+
+  const [data, setData] = useState(null); 
+
+  useEffect(() => {
+    fetch(`https://api.themoviedb.org/3/${props.code}/${params.movieId}?api_key=${process.env.REACT_APP_API_CODE}&language=ru-RU`)
+    .then(res => res.json() )
+    .then(result => {
+      setData(result);
+      console.log(result);
+    })
+  }, [props, params.movieId]);
+
   
-//<Loader>
-//          <StyledImg src={load} alt="Загрузка"/>
-//        </Loader> 
+
 
   return (
     <StyledDetails>
-        <DetailsTitle />
-        <DetailsContent />
+        {data === null ? <Loader>
+      <StyledImg src={load} alt="Загрузка"/>
+      </Loader> 
+      :
+      <div>
+        <DetailsTitle page={props.page} back={data.backdrop_path} title={data.title}/>
+        <DetailsContent code={props.code} data={data}/>
+      </div>
+      }
     </StyledDetails>
   );
 }

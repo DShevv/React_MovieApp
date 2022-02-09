@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 import styled from "styled-components";
 
 
 const StyledInfo = styled.section`
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 560px;
-  height: 144px;
-  top: 408px;
+  height: auto;
+  transform: translateY(-50%);
   left: 80px;
   padding: 40px;
 
@@ -40,17 +39,15 @@ const Title = styled.div`
   color: #EBEEF5;
 `;
 
-function DetailsInfo(props) {
-  const params = useParams();
-
+function DetailsText(props) {
   return (
     <StyledInfo>
       <Path>
-        МувиАпп / Фильмы
+        МувиАпп / {props.page}
       </Path>
-      <Title>Мстители: Финал</Title>
+      <Title>{props.title}</Title>
     </StyledInfo>
   );
 }
 
-export default DetailsInfo;
+export default DetailsText;

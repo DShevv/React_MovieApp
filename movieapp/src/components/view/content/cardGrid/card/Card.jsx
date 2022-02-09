@@ -16,12 +16,17 @@ const StyledCard = styled.div`
   transition: ease-in-out 0.3s;
   transform: translateZ(0);
   z-index: 2;
+  
 
   &:hover {
     cursor: pointer;
     transform: translateY(-5px);
     background: rgba(46, 58, 90, 0.8);
   }
+`;
+
+const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
 `;
 
 const Poster = styled.img`
@@ -41,6 +46,7 @@ const Title = styled.div`
   line-height: 24px;
   letter-spacing: 0.01em;
   color: #ebeef5;
+  
 `;
 
 const CardContainer = styled.div`
@@ -59,7 +65,7 @@ function Card(props) {
 
   const img = `https://image.tmdb.org/t/p/w500${props.data.poster_path}`;
   return (
-    <NavLink to={`/${props.code}/${props.data.id}`}>
+    <StyledNavLink to={`/${props.code}/${props.data.id}`}>
       <CardContainer>
         <BackGroud src={img} />
         <StyledCard>
@@ -71,7 +77,7 @@ function Card(props) {
           <Title>{props.data[props.name]}</Title>
         </StyledCard>
       </CardContainer>
-    </NavLink>
+    </StyledNavLink>
     
   );
 }
