@@ -1,4 +1,3 @@
-import "./App.css";
 import View from "./components/view/View";
 import styled from "styled-components";
 import bgImage from "./assets/Background.svg";
